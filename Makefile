@@ -10,7 +10,7 @@ FILES		=	core font image edje
 EDC_FILES	=	edje_example
 EDJ		=	$(addsuffix .edj, $(EDC_FILES))
 
-OBJS		=	$(addsuffix .o, $(FILES)) $(addsuffix .o, $(PSC))
+OBJS		=	$(addsuffix .o, $(FILES)) $(addsuffix .o, $(MAIN))
 DEPS		=	$(addsuffix .h, $(FILES)) color.h
 
 all: $(MAIN)
