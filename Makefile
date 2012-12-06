@@ -4,7 +4,7 @@ CFLAGS		=	`pkg-config ecore ecore-evas edje --cflags` -Wall
 CC		=	g++
 EDJECC		=	edje_cc
 
-PSC		=	main
+MAIN		=	main
 FILES		=	core font image edje
 
 EDC_FILES	=	edje_example
@@ -13,9 +13,9 @@ EDJ		=	$(addsuffix .edj, $(EDC_FILES))
 OBJS		=	$(addsuffix .o, $(FILES)) $(addsuffix .o, $(PSC))
 DEPS		=	$(addsuffix .h, $(FILES)) color.h
 
-all: $(PSC)
+all: $(MAIN)
 
-$(PSC): %: %.o $(OBJS) $(EDJ) $(DEPS)
+$(MAIN): %: %.o $(OBJS) $(EDJ) $(DEPS)
 	$(CC) -o $@ $(OBJS) $(CFLAGS) $(LIBS)
 
 $(OBJS): %.o: %.cpp $(DEPS)
